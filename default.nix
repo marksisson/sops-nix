@@ -28,7 +28,7 @@ rec {
     inherit sops-install-secrets;
   };
 }
-// pkgs.lib.optionalAttrs pkgs.stdenv.isLinux {
+// pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
   cross-build = pkgs.callPackage ./pkgs/cross-build.nix {
     inherit sops-install-secrets;
   };
